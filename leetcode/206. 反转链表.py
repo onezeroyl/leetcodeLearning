@@ -5,6 +5,8 @@
 #         self.next = next
 from typing import Optional
 
+from list_common import *
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -40,34 +42,7 @@ class Solution:
         return prev
 
 
-def create_linked_list(arr):
-    """根据数组创建链表"""
-    if not arr:
-        return None
 
-    head = ListNode(arr[0])
-    current = head
-    for i in range(1, len(arr)):
-        current.next = ListNode(arr[i])
-        current = current.next
-
-    return head
-
-
-def linked_list_to_array(head):
-    """将链表转换为数组用于验证"""
-    result = []
-    current = head
-    while current:
-        result.append(current.val)
-        current = current.next
-    return result
-
-
-def print_linked_list(head):
-    """打印链表"""
-    arr = linked_list_to_array(head)
-    print(" -> ".join(map(str, arr)) if arr else "Empty list")
 
 
 # 测试用例
